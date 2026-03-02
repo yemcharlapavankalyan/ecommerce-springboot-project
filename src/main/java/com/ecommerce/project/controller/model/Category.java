@@ -1,12 +1,24 @@
  package com.ecommerce.project.controller.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 /**
  * 
  */
+ @Entity(name = "categories") // by specifying, we get a good control over, like : name of the table
 public class Category {
 
+	 @Id 
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long categoryId;
 	private String categoryName;
+	
+	public Category() {
+	}
+	
 	public Long getCategoryId() {
 		return categoryId;
 	}
